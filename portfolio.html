@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Dasari Bhuvana Keerthi | Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+  :root {
+    --cream:    #FAF7F2;
+    --cream2:   #F2EDE4;
+    --sand:     #E8DFD0;
+    --brown:    #8B6F47;
+    --dark:     #2C2417;
+    --mid:      #5C4A32;
+    --accent:   #C17D3C;
+    --accent2:  #7BAE8E;
+    --text:     #3D2E1E;
+    --muted:    #7A6855;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--cream);
+    color: var(--text);
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(250,247,242,0.92);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--sand);
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 14px 5%;
+  }
+  .nav-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem; font-weight: 700;
+    color: var(--accent); letter-spacing: 0.02em;
+  }
+  .nav-links { display: flex; gap: 28px; list-style: none; flex-wrap: wrap; }
+  .nav-links a {
+    text-decoration: none; color: var(--mid);
+    font-size: 0.82rem; font-weight: 500; letter-spacing: 0.04em;
+    text-transform: uppercase; transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--accent); }
+
+  /* ── SECTIONS ── */
+  section { padding: 80px 5%; max-width: 1060px; margin: 0 auto; }
+  section + section { padding-top: 60px; }
+
+  .section-label {
+    font-size: 0.72rem; font-weight: 600; letter-spacing: 0.14em;
+    text-transform: uppercase; color: var(--accent);
+    margin-bottom: 10px;
+  }
+  h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.6rem, 3vw, 2.2rem);
+    font-weight: 700; color: var(--dark);
+    margin-bottom: 36px;
+    padding-bottom: 14px;
+    border-bottom: 2px solid var(--sand);
+  }
+  h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem; color: var(--dark); font-weight: 600;
+    margin-bottom: 4px;
+  }
+
+  /* ── HERO ── */
+  #hero {
+    min-height: 92vh; display: flex; flex-direction: column;
+    justify-content: center; align-items: flex-start;
+    padding: 80px 6%; max-width: 100%;
+    background: linear-gradient(135deg, var(--cream) 60%, var(--cream2) 100%);
+    position: relative; overflow: hidden;
+  }
+  #hero::after {
+    content: '';
+    position: absolute; right: -60px; bottom: -80px;
+    width: 500px; height: 500px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(193,125,60,0.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero-eyebrow {
+    font-size: 0.8rem; font-weight: 600; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--accent); margin-bottom: 18px;
+  }
+  .hero-name {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.6rem, 6vw, 4.8rem);
+    font-weight: 700; color: var(--dark);
+    line-height: 1.1; margin-bottom: 20px;
+  }
+  .hero-name span { color: var(--accent); }
+  .hero-tagline {
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    color: var(--muted); font-weight: 300;
+    max-width: 540px; margin-bottom: 36px; line-height: 1.6;
+  }
+  .hero-chips { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 40px; }
+  .chip {
+    background: var(--cream2); border: 1px solid var(--sand);
+    padding: 6px 14px; border-radius: 100px;
+    font-size: 0.78rem; color: var(--mid); font-weight: 500;
+  }
+  .hero-contacts { display: flex; flex-wrap: wrap; gap: 20px; }
+  .contact-link {
+    display: flex; align-items: center; gap: 7px;
+    text-decoration: none; color: var(--mid);
+    font-size: 0.84rem; font-weight: 500;
+    transition: color 0.2s;
+  }
+  .contact-link:hover { color: var(--accent); }
+  .contact-icon {
+    width: 28px; height: 28px; border-radius: 50%;
+    background: var(--sand); display: flex; align-items: center; justify-content: center;
+    font-size: 0.75rem;
+  }
+
+  /* ── ABOUT ── */
+  #about .about-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 40px;
+  }
+  .about-text p { color: var(--muted); margin-bottom: 14px; }
+  .about-card {
+    background: var(--cream2); border: 1px solid var(--sand);
+    border-radius: 12px; padding: 28px;
+  }
+  .about-card h4 { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent); margin-bottom: 14px; }
+  .edu-item { margin-bottom: 18px; }
+  .edu-item:last-child { margin-bottom: 0; }
+  .edu-inst { font-weight: 600; color: var(--dark); font-size: 0.92rem; }
+  .edu-degree { color: var(--muted); font-size: 0.84rem; }
+  .edu-year { color: var(--accent); font-size: 0.78rem; font-weight: 600; margin-top: 2px; }
+
+  /* ── SKILLS ── */
+  #skills .skills-grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 20px;
+  }
+  .skill-card {
+    background: var(--cream2); border: 1px solid var(--sand);
+    border-radius: 12px; padding: 22px 20px;
+  }
+  .skill-card h4 {
+    font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.1em;
+    color: var(--accent); margin-bottom: 12px; font-weight: 600;
+  }
+  .skill-tags { display: flex; flex-wrap: wrap; gap: 7px; }
+  .skill-tag {
+    background: var(--cream); border: 1px solid var(--sand);
+    padding: 4px 10px; border-radius: 6px;
+    font-size: 0.76rem; color: var(--mid);
+  }
+
+  /* ── PROJECTS ── */
+  #projects .projects-grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 24px;
+  }
+  .project-card {
+    background: var(--cream2); border: 1px solid var(--sand);
+    border-radius: 14px; padding: 28px 24px;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .project-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(44,36,23,0.08); }
+  .project-badge {
+    display: inline-block; background: var(--sand);
+    color: var(--mid); font-size: 0.7rem; font-weight: 600;
+    text-transform: uppercase; letter-spacing: 0.08em;
+    padding: 3px 10px; border-radius: 100px; margin-bottom: 14px;
+  }
+  .project-desc { color: var(--muted); font-size: 0.88rem; margin: 10px 0 16px; }
+  .project-techs { display: flex; flex-wrap: wrap; gap: 6px; }
+  .project-tech {
+    background: var(--cream); border: 1px solid var(--sand);
+    font-size: 0.73rem; color: var(--brown);
+    padding: 3px 9px; border-radius: 5px; font-weight: 500;
+  }
+  .project-outcome {
+    margin-top: 14px; padding-top: 14px;
+    border-top: 1px solid var(--sand);
+    font-size: 0.8rem; color: var(--accent2); font-weight: 500;
+  }
+
+  /* ── INTERNSHIP ── */
+  #internship .intern-card {
+    background: var(--cream2); border: 1px solid var(--sand);
+    border-radius: 14px; padding: 32px;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 32px;
+  }
+  .intern-meta { display: flex; flex-direction: column; gap: 10px; }
+  .intern-org { font-size: 0.82rem; color: var(--muted); }
+  .intern-dur { font-size: 0.78rem; color: var(--accent); font-weight: 600; }
+  .intern-list { list-style: none; }
+  .intern-list li { padding: 5px 0; padding-left: 16px; position: relative; color: var(--muted); font-size: 0.88rem; }
+  .intern-list li::before { content: '→'; position: absolute; left: 0; color: var(--accent); }
+
+  /* ── CERTS ── */
+  #certifications .certs-grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 16px;
+  }
+  .cert-group h4 {
+    font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.12em;
+    color: var(--accent); font-weight: 700; margin-bottom: 10px;
+  }
+  .cert-item {
+    background: var(--cream2); border: 1px solid var(--sand);
+    border-radius: 10px; padding: 14px 16px;
+    font-size: 0.84rem; color: var(--mid);
+    display: flex; align-items: flex-start; gap: 10px;
+  }
+  .cert-item + .cert-item { margin-top: 8px; }
+  .cert-check { color: var(--accent2); font-size: 1rem; flex-shrink: 0; margin-top: 1px; }
+
+  /* ── ACHIEVEMENTS ── */
+  #achievements .ach-list {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 14px;
+  }
+  .ach-item {
+    background: var(--cream2); border: 1px solid var(--sand);
+    border-radius: 10px; padding: 18px 20px;
+    display: flex; align-items: center; gap: 14px;
+  }
+  .ach-icon { font-size: 1.4rem; flex-shrink: 0; }
+  .ach-text { font-size: 0.88rem; color: var(--mid); }
+
+  /* ── CONTACT ── */
+  #contact {
+    background: var(--cream2);
+    border-radius: 20px;
+    margin: 0 4% 80px;
+    max-width: none;
+    padding: 60px 6%;
+    text-align: center;
+  }
+  #contact h2 { border-bottom: none; margin-bottom: 12px; text-align: center; }
+  #contact p { color: var(--muted); margin-bottom: 36px; }
+  .contact-grid {
+    display: flex; justify-content: center; flex-wrap: wrap; gap: 20px;
+  }
+  .contact-card {
+    background: var(--cream); border: 1px solid var(--sand);
+    border-radius: 12px; padding: 20px 30px;
+    text-decoration: none; color: var(--mid);
+    display: flex; align-items: center; gap: 12px;
+    font-size: 0.9rem; font-weight: 500;
+    transition: all 0.2s;
+  }
+  .contact-card:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); }
+  .contact-card-icon { font-size: 1.3rem; }
+
+  /* ── FOOTER ── */
+  footer {
+    text-align: center; padding: 24px;
+    font-size: 0.78rem; color: var(--muted);
+    border-top: 1px solid var(--sand);
+  }
+
+  /* ── DIVIDER ── */
+  .divider {
+    width: 100%; height: 1px; background: var(--sand);
+    max-width: 1060px; margin: 0 auto;
+  }
+
+  @media (max-width: 720px) {
+    nav { flex-direction: column; gap: 12px; text-align: center; }
+    .nav-links { justify-content: center; gap: 16px; }
+    #about .about-grid { grid-template-columns: 1fr; }
+    #internship .intern-card { grid-template-columns: 1fr; }
+    #hero { padding: 60px 5%; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">BK</div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#internship">Internship</a></li>
+    <li><a href="#certifications">Certs</a></li>
+    <li><a href="#achievements">Achievements</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-eyebrow">Computer Science Student · VIT-AP University</div>
+  <h1 class="hero-name">Dasari<br/><span>Bhuvana Keerthi</span></h1>
+  <p class="hero-tagline">Building scalable software with a focus on Cloud, Full-Stack Development, and AI — driven by curiosity and a love for solving real problems.</p>
+  <div class="hero-chips">
+    <span class="chip">☁️ Cloud Computing</span>
+    <span class="chip">🌐 Full-Stack Dev</span>
+    <span class="chip">🤖 AI & ML</span>
+    <span class="chip">🛡️ Cybersecurity</span>
+  </div>
+  <div class="hero-contacts">
+    <a class="contact-link" href="mailto:bhuvanakeerthi06@gmail.com">
+      <span class="contact-icon">✉</span> bhuvanakeerthi06@gmail.com
+    </a>
+    <a class="contact-link" href="tel:+918464876202">
+      <span class="contact-icon">📱</span> +91 84648 76202
+    </a>
+    <a class="contact-link" href="https://linkedin.com/in/1805-dasari-bhuvana-keerthi" target="_blank">
+      <span class="contact-icon">in</span> LinkedIn
+    </a>
+    <a class="contact-link" href="https://github.com/yourusername" target="_blank">
+      <span class="contact-icon">⌥</span> GitHub
+    </a>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ABOUT + EDUCATION -->
+<section id="about">
+  <div class="section-label">Who I Am</div>
+  <h2>About Me</h2>
+  <div class="about-grid">
+    <div class="about-text">
+      <p>I am a Computer Science undergraduate at VIT-AP University with a deep interest in building things that work — from cloud-native systems to full-stack web apps and AI-powered tools.</p>
+      <p>My technical journey spans AWS cloud architecture, React/Node full-stack development, cybersecurity foundations, and machine learning applications. I learn by doing and believe the best code solves real problems.</p>
+      <p>Currently seeking internship and placement opportunities in Software Development, Cloud Engineering, or AI Engineering, where I can contribute meaningfully while continuing to grow.</p>
+    </div>
+    <div class="about-card">
+      <h4>Education</h4>
+      <div class="edu-item">
+        <div class="edu-inst">VIT-AP University</div>
+        <div class="edu-degree">B.Tech — Computer Science & Engineering</div>
+        <div class="edu-year">2023 – 2027</div>
+      </div>
+      <div class="edu-item">
+        <div class="edu-inst">FIITJEE Junior College</div>
+        <div class="edu-degree">Intermediate Education</div>
+        <div class="edu-year">2021 – 2023</div>
+      </div>
+      <div class="edu-item">
+        <div class="edu-inst">Sri Chaitanya High School</div>
+        <div class="edu-degree">Secondary Education (Class X)</div>
+        <div class="edu-year">2021</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="section-label">What I Work With</div>
+  <h2>Technical Skills</h2>
+  <div class="skills-grid">
+    <div class="skill-card">
+      <h4>Languages</h4>
+      <div class="skill-tags">
+        <span class="skill-tag">Python</span>
+        <span class="skill-tag">Java</span>
+        <span class="skill-tag">C</span>
+        <span class="skill-tag">C++</span>
+      </div>
+    </div>
+    <div class="skill-card">
+      <h4>Web Development</h4>
+      <div class="skill-tags">
+        <span class="skill-tag">HTML</span>
+        <span class="skill-tag">CSS</span>
+        <span class="skill-tag">JavaScript</span>
+        <span class="skill-tag">React.js</span>
+        <span class="skill-tag">Node.js</span>
+        <span class="skill-tag">Express.js</span>
+      </div>
+    </div>
+    <div class="skill-card">
+      <h4>Cloud & DevOps</h4>
+      <div class="skill-tags">
+        <span class="skill-tag">AWS EC2</span>
+        <span class="skill-tag">S3</span>
+        <span class="skill-tag">IAM</span>
+        <span class="skill-tag">VPC</span>
+        <span class="skill-tag">Cloud Architecture</span>
+      </div>
+    </div>
+    <div class="skill-card">
+      <h4>Databases</h4>
+      <div class="skill-tags">
+        <span class="skill-tag">PostgreSQL</span>
+        <span class="skill-tag">MySQL</span>
+      </div>
+    </div>
+    <div class="skill-card">
+      <h4>AI & ML</h4>
+      <div class="skill-tags">
+        <span class="skill-tag">Prompt Engineering</span>
+        <span class="skill-tag">NLP</span>
+        <span class="skill-tag">Machine Learning</span>
+        <span class="skill-tag">Generative AI</span>
+      </div>
+    </div>
+    <div class="skill-card">
+      <h4>Cybersecurity</h4>
+      <div class="skill-tags">
+        <span class="skill-tag">Ethical Hacking</span>
+        <span class="skill-tag">OSINT</span>
+        <span class="skill-tag">Nmap</span>
+        <span class="skill-tag">Maltego</span>
+        <span class="skill-tag">YARA</span>
+      </div>
+    </div>
+    <div class="skill-card">
+      <h4>Tools</h4>
+      <div class="skill-tags">
+        <span class="skill-tag">Git</span>
+        <span class="skill-tag">GitHub</span>
+        <span class="skill-tag">MATLAB</span>
+      </div>
+    </div>
+    <div class="skill-card">
+      <h4>Soft Skills</h4>
+      <div class="skill-tags">
+        <span class="skill-tag">Problem Solving</span>
+        <span class="skill-tag">Teamwork</span>
+        <span class="skill-tag">Communication</span>
+        <span class="skill-tag">Leadership</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="section-label">What I've Built</div>
+  <h2>Projects</h2>
+  <div class="projects-grid">
+
+    <div class="project-card">
+      <span class="project-badge">Full-Stack</span>
+      <h3>Leave Management System</h3>
+      <p class="project-desc">A web-based system for managing employee leave requests, approvals, and tracking — with role-based authentication.</p>
+      <div class="project-techs">
+        <span class="project-tech">React.js</span>
+        <span class="project-tech">Node.js</span>
+        <span class="project-tech">PostgreSQL</span>
+      </div>
+      <div class="project-outcome">✦ Improved team leave management efficiency end-to-end</div>
+    </div>
+
+    <div class="project-card">
+      <span class="project-badge">Full-Stack</span>
+      <h3>Portfolio Critique Exchange</h3>
+      <p class="project-desc">A platform where developers and designers anonymously exchange portfolio reviews, fostering constructive peer feedback.</p>
+      <div class="project-techs">
+        <span class="project-tech">React.js</span>
+        <span class="project-tech">Node.js</span>
+        <span class="project-tech">Express.js</span>
+      </div>
+      <div class="project-outcome">✦ Built anonymous review flow with user dashboard</div>
+    </div>
+
+    <div class="project-card">
+      <span class="project-badge">AI / Python</span>
+      <h3>Simple Chatbot</h3>
+      <p class="project-desc">A rule-based chatbot built in Python that handles common user queries through keyword matching and a predefined knowledge base.</p>
+      <div class="project-techs">
+        <span class="project-tech">Python</span>
+        <span class="project-tech">NLP</span>
+      </div>
+      <div class="project-outcome">✦ Handles domain-specific Q&A with structured logic</div>
+    </div>
+
+    <div class="project-card">
+      <span class="project-badge">Cybersecurity</span>
+      <h3>Footprinting & OSINT</h3>
+      <p class="project-desc">Performed ethical reconnaissance — domain analysis, DNS enumeration, email footprinting, and security assessment using industry tools.</p>
+      <div class="project-techs">
+        <span class="project-tech">Nmap</span>
+        <span class="project-tech">Maltego</span>
+        <span class="project-tech">Hydra</span>
+        <span class="project-tech">YARA</span>
+        <span class="project-tech">Zphisher</span>
+      </div>
+      <div class="project-outcome">✦ Comprehensive OSINT report on target system</div>
+    </div>
+
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- INTERNSHIP -->
+<section id="internship">
+  <div class="section-label">Industry Experience</div>
+  <h2>Internship</h2>
+  <div class="intern-card">
+    <div class="intern-meta">
+      <h3>AWS Cloud Internship</h3>
+      <div class="intern-org">NSIC Technical Services Centre</div>
+      <div class="intern-dur">June 2025 – July 2025</div>
+      <p style="color:var(--muted);font-size:0.85rem;margin-top:10px;">Worked hands-on with AWS core services during a structured cloud training and internship programme. Gained practical exposure to cloud deployment, security, and architecture best practices.</p>
+    </div>
+    <div>
+      <h4 style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--accent);margin-bottom:12px;font-weight:600;">Key Learnings</h4>
+      <ul class="intern-list">
+        <li>AWS Core Services (EC2, S3, IAM, VPC)</li>
+        <li>Cloud Architecture & Design Patterns</li>
+        <li>Virtualization Fundamentals</li>
+        <li>Cloud Deployment Models</li>
+        <li>Security Best Practices on AWS</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- CERTIFICATIONS -->
+<section id="certifications">
+  <div class="section-label">Verified Learning</div>
+  <h2>Certifications</h2>
+  <div class="certs-grid">
+
+    <div class="cert-group">
+      <h4>☁️ Cloud Computing</h4>
+      <div class="cert-item"><span class="cert-check">✔</span>AWS Academy Graduate — Cloud Foundations</div>
+      <div class="cert-item"><span class="cert-check">✔</span>AWS Academy Graduate — Cloud Architecting</div>
+      <div class="cert-item"><span class="cert-check">✔</span>AWS Internship Certificate — NSIC</div>
+    </div>
+
+    <div class="cert-group">
+      <h4>💻 Software Engineering</h4>
+      <div class="cert-item"><span class="cert-check">✔</span>Goldman Sachs Software Engineering Job Simulation</div>
+      <div class="cert-item"><span class="cert-check">✔</span>Complete Web Development Course (Udemy)</div>
+    </div>
+
+    <div class="cert-group">
+      <h4>🤖 Artificial Intelligence</h4>
+      <div class="cert-item"><span class="cert-check">✔</span>Intro to Generative AI Studio (Google Cloud)</div>
+      <div class="cert-item"><span class="cert-check">✔</span>Prompt Engineering for AI Applications</div>
+    </div>
+
+    <div class="cert-group">
+      <h4>🛡️ Cybersecurity</h4>
+      <div class="cert-item"><span class="cert-check">✔</span>Cyber Security & Ethical Hacking (Blackbucks)</div>
+    </div>
+
+    <div class="cert-group">
+      <h4>🔧 Programming & Tools</h4>
+      <div class="cert-item"><span class="cert-check">✔</span>C Language Certification — NSIC</div>
+      <div class="cert-item"><span class="cert-check">✔</span>MATLAB Onramp Certification</div>
+    </div>
+
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ACHIEVEMENTS -->
+<section id="achievements">
+  <div class="section-label">Milestones</div>
+  <h2>Achievements</h2>
+  <div class="ach-list">
+    <div class="ach-item"><span class="ach-icon">☁️</span><span class="ach-text">Completed AWS Cloud Architecting Program with hands-on labs</span></div>
+    <div class="ach-item"><span class="ach-icon">🏦</span><span class="ach-text">Cleared Goldman Sachs Software Engineering Simulation</span></div>
+    <div class="ach-item"><span class="ach-icon">🌐</span><span class="ach-text">Built multiple full-stack applications from design to deployment</span></div>
+    <div class="ach-item"><span class="ach-icon">🤖</span><span class="ach-text">Developed AI and chatbot projects with Python & NLP</span></div>
+    <div class="ach-item"><span class="ach-icon">🛡️</span><span class="ach-text">Completed Cybersecurity & Ethical Hacking Training</span></div>
+    <div class="ach-item"><span class="ach-icon">🎓</span><span class="ach-text">Earned cloud and AI certifications from AWS & Google Cloud</span></div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-label">Let's Connect</div>
+  <h2>Get in Touch</h2>
+  <p>Open to internships, collaboration, and new opportunities in Software, Cloud, and AI Engineering.</p>
+  <div class="contact-grid">
+    <a class="contact-card" href="mailto:bhuvanakeerthi06@gmail.com">
+      <span class="contact-card-icon">✉️</span> bhuvanakeerthi06@gmail.com
+    </a>
+    <a class="contact-card" href="tel:+918464876202">
+      <span class="contact-card-icon">📱</span> +91 84648 76202
+    </a>
+    <a class="contact-card" href="https://linkedin.com/in/1805-dasari-bhuvana-keerthi" target="_blank">
+      <span class="contact-card-icon">🔗</span> LinkedIn Profile
+    </a>
+    <a class="contact-card" href="https://github.com/yourusername" target="_blank">
+      <span class="contact-card-icon">💻</span> GitHub Profile
+    </a>
+  </div>
+</section>
+
+<footer>
+  © 2025 Dasari Bhuvana Keerthi · Amaravati, Andhra Pradesh, India
+</footer>
+
+</body>
+</html>
